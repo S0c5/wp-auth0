@@ -107,7 +107,7 @@ class WP_Auth0_Options extends WP_Auth0_Options_Generic {
 	 * @return string
 	 */
 	public function get_wp_auth0_url( $protocol = '' ) {
-		$site_url = empty( $protocol ) ? site_url() : site_url( '', $protocol );
+		$site_url = empty( $protocol ) ? site_url( 'index.php' ) : site_url( 'index.php', $protocol );
 		return add_query_arg( 'auth0', '1', $site_url );
 	}
 
@@ -117,7 +117,7 @@ class WP_Auth0_Options extends WP_Auth0_Options_Generic {
 	 * @return string
 	 */
 	public function get_cross_origin_loc() {
-		return add_query_arg( 'auth0fallback', '1', site_url( '', 'https' ) );
+		return add_query_arg( 'auth0fallback', '1', site_url( 'index.php', 'https' ) );
 	}
 
 	/**
