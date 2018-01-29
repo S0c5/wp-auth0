@@ -3,6 +3,7 @@
 class WP_Auth0_Api_Client {
 
 	public static $default_client_alg = 'RS256';
+
 	private static $connect_info = null;
 
 	/**
